@@ -1,0 +1,15 @@
+de:
+  today: "Heute ist:"
+  now: "Kurz:"
+  welcome: "Willkommen!"
+  service_html: "Wir bieten <em>guten Menschen</em> einige ausgefallene Dienstleistungen"
+  date:
+    formats:
+      default: "%m/%d/%Y"
+      short: "%m/%d"
+  areas:
+    index:
+      title: "Bereich"
+    new:
+      title: "Neues Gebiet"
+      back_area: "Aufführen"

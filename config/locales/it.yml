@@ -1,0 +1,18 @@
+it:
+  today: "Oggi è  il :"
+  now: "Adesso :"
+  welcome: "Ciao!"
+  service_html: "Forniamo alcuni servizi fantasiosi alle <em>brave persone</em>"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d/%m"
+  areas:
+    index:
+      title: "Area"
+      new_area: "Nuova Area"
+    new:
+      title: "Nuova Area"
+      back_area: "Elenco"
+
+

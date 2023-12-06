@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t (".title") %></h1>
+
+<div id="areas">
+  <% @areas.each do |area| %>
+    <%= render area %>
+    <p>
+      <%= link_to "Show this area", area %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to t(".new_area"), new_area_path %>

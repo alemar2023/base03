@@ -1,0 +1,28 @@
+
+
+<% if user_signed_in? %>
+  <div class="btn-group" style="margin-right:10px;">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <%= "Hi " + current_user.email + ", welcome! " %>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-lg-end">
+      <li class="disabled">i tuoi gruppi</li>
+
+      <%= link_to 'Admin Manager', root_path, class: 'dropdown-item bckadm' %>
+      <%= link_to 'User Manager', root_path, class: 'dropdown-item bckusr' %>
+
+      <hr class="hr pad_zero"  />
+      <%= link_to 'Edit profile', edit_user_registration_path, class: 'dropdown-item' %>
+      <hr class="hr pad_zero"  />
+      <%#= link_to "Dashboard", dashboard_path, class: 'dropdown-item' %>
+      <hr class="hr pad_zero"  />
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo_method: 'delete', turbo_confirm: 'Really?' }, class: 'dropdown-item' %>
+
+    </ul>
+  </div>
+
+
+<% else %>
+  <%= link_to "Login", new_user_session_path, class: 'btn btn-outline-success' %>
+  <%= link_to "Registrati", new_user_registration_path, class: 'btn btn-outline-success' %>
+<% end %>

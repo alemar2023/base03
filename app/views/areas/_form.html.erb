@@ -1,0 +1,51 @@
+<%= form_with(model: area) do |form| %>
+  <% if area.errors.any? %>
+    <div style="color: red">
+      < <h2><%= pluralize(area.errors.count, "error") %> prohibited this area from being saved:</h2>
+
+
+      <ul>
+        <% area.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :deleted, style: "display: none" %>
+    <%= form.hidden_field :deleted %>
+  </div>
+<div> </div>
+
+  <div>
+
+    <p style="display:none"><strong>Blueprint translations fields</strong>  </p>
+
+    <%= form.fields_for :area_labels do |translation_form| %>
+
+      <div>
+        <%= translation_form.label :name %>
+        <%= translation_form.text_field :name %>
+      </div>
+
+      <div>
+        <%= translation_form.label :locale %>
+        <%= translation_form.select :locale, options_for_select(all_locales_for_select) %>
+        <!-- Replace options_for_select with your actual locales -->
+      </div>
+    <% end %>
+  </div>
+  <div>
+
+    <div>
+      <%= form.label :body, style: "display: block" %>
+      <%= form.rich_text_area :body %>
+    </div>
+    <div>
+      <%= form.label :image %>
+      <%= form.file_field :image%>
+    </div>
+    <%= form.submit  %>
+  </div>
+<% end %>

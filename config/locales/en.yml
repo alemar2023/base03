@@ -1,0 +1,17 @@
+
+en:
+        today: "Today is:"
+        now: "Now:"
+        welcome: "Welcome!"
+        service_html: "We provide some fancy services to <em> good people</em>"
+        date:
+         formats:
+            default: "%m/%d/%Y"
+            short: "%m/%d"
+        areas:
+          index:
+            title: "Areas"
+          new:
+            title: "New Area"
+            back_area: "List"
+
