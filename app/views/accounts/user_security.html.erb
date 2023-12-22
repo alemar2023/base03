@@ -1,0 +1,98 @@
+<style>
+    .geko_btn {
+
+        border: 0.5px solid #dedede;
+        width:100% !important;
+    }
+
+.breadcrumb-item a{
+    color: navy !important;
+    font-size:12px !important;
+    text-transform: uppercase;
+}
+    .breadcrumb-item{
+    color: #9b9b9b !important;
+    font-size:12px !important;
+    text-transform: uppercase;
+}
+
+</style>
+
+<hr class="hr_zero">
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb breadcrumb-custom hr_zero">
+    <li class="breadcrumb-item"><a href="/" data-abc="true">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><span>Account & Security</span></li>
+  </ol>
+</nav>
+<hr  class="hr_zero">
+<p>&nbsp;</p>
+<div class="container-fluid">
+
+  <div class="row justify-content-md-center">
+
+
+
+    <div class="col">
+
+    </div>
+    <div class="col-md-3">
+      <h3>Welcome!</h3>
+      <p>
+        In this section you can define and modify your access data.<br>
+
+      </p>
+    </div>
+    <div class="col-md-6">
+      <ul class="list-group">
+        <li class="list-group-item ">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="p-3"><b>Name:</b><br>
+              <%= current_user.email %></div>
+
+          </div>
+        </li>
+        <li class="list-group-item ">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="p-3"><b>Email:</b><br>
+              <%= current_user.email %></div>
+
+          </div>
+        </li>
+        <li class="list-group-item ">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="p-3"><b>Password:</b><br>
+              <%= current_user.email %></div>
+
+          </div>
+        </li>
+        <li class="list-group-item ">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="p-3"><b>Favourite Address:</b><br>
+              <%= current_user.email %></div>
+
+          </div>
+        </li>
+        <li class="list-group-item ">
+          <div class="card-header d-flex justify-content-center align-items-center">
+
+            <button type="button" class="btn btn-primary shadow-sm p-2 geko_btn ">Modify</button>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="col col-lg-2">
+
+    </div>
+
+
+
+
+</div>
+
+
+
+</div>

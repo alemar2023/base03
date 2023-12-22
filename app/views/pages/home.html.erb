@@ -1,4 +1,18 @@
-<h1><%= t 'welcome' %></h1>
-<p> <%= t("welcome") %></p>
-<h5><%= t("today") %> <%= l Date.today %></h5>
-<h5><%= t("now") %> <%= l Date.today , format: :short %></h5>
+<div style="display: flex;justify-content: center;align-items: center;height:500px">
+  <div style="align-self: center;align-items: center;">
+
+    <h3> <%= t("welcome") %></h3>
+    <h5><%= t("today") %> <%= l Date.today %> - <%= t("now") %> <%= l Date.today , format: :short %></h5>
+
+    <%= image_tag "ImGeKo.svg", class: "home-logo" %>
+<p>Lang: <%= @cook_lang %></p>
+<p>Loc: <%= @cook_loc %></p>
+<p>a: <%= @cook_a %></p>
+<p>b: <%= @cook_b %></p>
+<p>c: <%= @cook_c %></p>
+<p>d: <%= @cook_d %></p>
+<p>e: <%= @cook_e %></p>
+  </div>
+
+
+</div>

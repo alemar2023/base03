@@ -1,18 +1,35 @@
+---
 it:
-  today: "Oggi è  il :"
-  now: "Adesso :"
-  welcome: "Ciao!"
-  service_html: "Forniamo alcuni servizi fantasiosi alle <em>brave persone</em>"
+  account_addresses: Indirizzi
+  account_addresses_text: Inserisci le tue preferenze per la spedizione e consegna
+  account_groups: I miei gruppi preferiti
+  account_groups_text: Segui le News nelle sezioni preferite
+  account_modify_info: Dati utente
+  account_modify_info_text: Modifica i tuoi dati utente
+  account_orders: I miei ordini
+  account_orders_text: Traccia e/o veridfica lo stato degli ordini
+  account_security: Accesso e Impostazioni di Sicurezza
+  account_security_text: Modifica il login, la mail o  il cellulare
+  account_support: Contattaci
+  account_support_text: Contatta il supporto tecnico per informazioni
+  account_whishlist: Liste dei desideri e delle preferenze
+  account_whishlist_text: Visualizza e modifica le tue liste dei desideri e gli articoli preferiti
+  areas:
+    index:
+      new_area: New area
+    new:
+      back_area: Back area
+      title: Title
+  data:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%Y/%m"
   date:
     formats:
       default: "%d/%m/%Y"
       short: "%d/%m"
-  areas:
-    index:
-      title: "Area"
-      new_area: "Nuova Area"
-    new:
-      title: "Nuova Area"
-      back_area: "Elenco"
-
-
+  menu_account: Il mio Account
+  now: 'Data corta :'
+  service_html: Forniamo alcuni servizi fantasiosi alle <em>brave persone</em>
+  today: 'Oggi è  il :'
+  welcome: Ciao!

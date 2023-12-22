@@ -1,0 +1,264 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- Google Font -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Stylesheet-->
+<style>
+
+
+
+
+    .container_pwd{
+
+        position: relative;
+        margin: auto;
+    }
+
+    .input_pwd{
+        width: 100%;
+
+        position: relative;
+        background-color: #f6fcff;
+
+        border-radius: 5px;
+    }
+
+    #toggle{
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        color: #808080;
+        cursor: pointer;
+    }
+    #toggle i{
+        font-size: 16px;
+    }
+    .strength{
+        width: 25%;
+        display: inline-block;
+        position: relative;
+        height: 100%;
+        bottom: 5px;
+    }
+    #strength-bar{
+        background-color: #dcdcdc;
+        height: 10px;
+        position: relative;
+        margin-top: 15px;
+        border-radius: 10px;
+    }
+
+</style>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Welcome to GeKo  Account!</h1>
+        <h2>Please complete the registration form below</h2>
+        <br>
+      </div>
+    </div>
+    <form method="post" action="/create-account?code=9tocek8vz8nn14q2r7unb2ssm&amp;contact=23zayledqbu3e65a8g7l4yk4s&amp;_st=7uwV8GUA-U1EH_TBZcBJIBMKqK7VMV9eJ77k5Fl1xwNbgyiHoK4gkv4S9_W-7wUh" js-password-strength-url="/password-strength?_st=7uwV8GUA-U1EH_TBZcBJIBMKqK7VMV9eJ77k5Fl1xwNbgyiHoK4gkv4S9_W-7wUh">
+      <div class="row">
+        <div class="col-sm-7 col-md-6">
+          <div class="form-horizontal clearfix">
+
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+                <label for="firstName" class="">First&nbsp;Name</label>
+              </div>
+              <div class="col-xs-8 control-field">
+                <input maxlength="100" name="firstName" id="firstName" type="text" autofocus="" class="form-control js-input-first-name" value="" required="">
+                <div class="error-message"></div>
+              </div>
+              <div class="col-xs-1 col-md-2 control-field"></div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+                <label for="lastName" class="">Last&nbsp;Name</label>
+              </div>
+              <div class="col-xs-8 control-field">
+                <input maxlength="100" name="lastName" id="lastName" type="text" class="form-control js-input-last-name" value="" required="">
+                <div class="error-message"></div>
+              </div>
+              <div class="col-xs-1 col-md-2 control-field"></div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+                <label for="userName" class="">Username</label>
+              </div>
+              <div class="col-xs-8 control-field">
+                <input data-contact="23zayledqbu3e65a8g7l4yk4s" name="userName" pattern="^(?=.{5,100}$)([\w.-]+|[a-zA-Z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9])$" id="userName" type="text" class="form-control js-input-username" value="" data-url="/username-availability?_st=7uwV8GUA-U1EH_TBZcBJIBMKqK7VMV9eJ77k5Fl1xwNbgyiHoK4gkv4S9_W-7wUh" required="" oninput="try { if($(this).val().match(new RegExp(this.getAttribute('pattern')))) { this.setCustomValidity(''); } else { this.setCustomValidity('A username must contain only latin symbols (A-z), digits (0-9), or be a valid email address 5 to 100 characters long.'); } } catch(e) {}">
+                <p class="help-block">Latin symbols (A-z), digits (0-9) or a valid email address 5 to 100 characters long.</p>
+
+                <div class="error-message"></div>
+              </div>
+              <div class="col-xs-1 col-md-2 control-field"></div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+                <label for="message" class=""></label>
+              </div>
+              <div class="col-xs-8 control-field">
+                <div>This account is the gateway to all of your purchases. Please choose a strong password to protect them.</div>
+                <div class="error-message"></div>
+              </div>
+              <div class="col-xs-1 col-md-2 control-field"></div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+                <label for="password" class="">Password</label>
+              </div>
+              <div class="col-xs-8 control-field">
+                <div class="container_pwd">
+                  <input type="password" id="password" oninput="strengthChecker()" class="input_pwd form-control  ">
+                  <span id="toggle" onclick="toggle()">
+                <i class="far fa-eye"></i>
+            </span>
+                  <div id="strength-bar"></div>
+                </div>
+                <input autocomplete="new-password" name="password" id="password" type="password" class="form-control" value="" required=""><div class="progress "><div class="progress-bar progress-bar-danger" style="width: 0%;"></div></div><span class="password-verdict"></span>
+                <div class="error-message"></div>
+              </div>
+              <div class="col-xs-1 col-md-2 control-field">
+                <div js-input-ids="password,pass2" class="password-stealth js-password-eye"><a><i class="icon icon-eye-close text-muted"></i></a></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+                <label for="pass2" class="">Re-enter&nbsp;password</label>
+              </div>
+              <div class="col-xs-8 control-field">
+                <input autocomplete="new-password" name="pass2" id="pass2" type="password" class="form-control" value="" required="">
+                <br>
+
+                <div class="error-message"></div>
+              </div>
+              <div class="col-xs-1 col-md-2 control-field"></div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+                <label class=""></label>
+              </div>
+              <div class="col-xs-8 control-field">
+                <div class="checkbox">
+                  <label><input name="privacy" type="checkbox" value="true" required="">I have read and I accept the&nbsp;<a href="https://www.jetbrains.com/legal/docs/agreements/jetbrains_account.html" target="_blank">GeKo Account Agreement</a></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5 col-md-4 col-lg-3 hidden-xs">
+          <p>GeKo Account allows you:</p>
+          <ul>
+            <li>Access your purchases and view your order history</li>
+            <li>Identify expired and outdated licenses, order new licenses and upgrades</li>
+            <li>Manage your company licenses and distribute them to end users</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="additional-consents-block clearfix">
+          <div class="col-sm-7 col-md-12">
+            <div class="row">
+              <div class="col-sm-12 col-sm-offset-3 col-md-offset-1 col-md-6">
+                <div class="additional-consent-group">
+                  <div class="additional-consent single">
+                    <ul class="list-unstyled">
+                      <li class="checkbox-with-notice">
+                        <div class="checkbox">
+                          <label><input name="mkt.newsletter.customer" type="checkbox" class="checkbox-inline" value="false">I consent that GeKo may use my name, email address, and location data In email communications regarding GeKo products held, or services used, by me or my organization.</label>
+                          <div class="checkbox-notice"><a data-toggle="popover" role="button" tabindex="0" data-placement="bottom" rel="popover" data-content="By submitting this form, I agree that GeKo s.r.o. (&quot;JetBrains&quot;) may use my name, email address, and location data to send me newsletters relating to the products held, or services used, by me or my organization, including commercial communications, and to process my personal data for this purpose. I agree that GeKo may process said data using <a href=&quot;https://www.jetbrains.com/legal/privacy/third-parties.html&quot; target=&quot;_blank&quot;>third-party services</a> for this purpose in accordance with the <a href=&quot;https://www.jetbrains.com/company/privacy.html&quot; target=&quot;_blank&quot;>GeKo Privacy Policy</a>. I understand that I can revoke this consent at any time in <a href=&quot;https://account.jetbrains.com/profile-details/privacy&quot; target=&quot;_blank&quot;>my profile</a>. In addition, an unsubscribe link is included in each email." data-trigger="focus" data-html="true">More</a></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-7 col-md-6">
+          <div class="form-group">
+            <div class="col-sm-3 col-md-2 control-label">
+              <label for="submit" class=""></label>
+            </div>
+            <div class="col-xs-8 control-field">
+              <button class="pwd-submit-btn btn btn-primary btn-lg">Submit</button>
+              <div class="error-message"></div>
+            </div>
+            <div class="col-xs-1 col-md-2 control-field"></div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<!--Script-->
+<script>
+    let parameters = {
+        count : false,
+        letters : false,
+        numbers : false,
+        special : false
+    }
+    let strengthBar = document.getElementById("strength-bar");
+
+    function strengthChecker(){
+        let password = document.getElementById("password").value;
+
+        parameters.letters = (/[A-Za-z]+/.test(password))?true:false;
+        parameters.numbers = (/[0-9]+/.test(password))?true:false;
+        parameters.special = (/[!\"$%&/()=?@~`\\.\';:+=^*_-]+/.test(password))?true:false;
+        parameters.count = (password.length > 7)?true:false;
+
+        let barLength = Object.values(parameters).filter(value=>value);
+
+        console.log(Object.values(parameters), barLength);
+
+        strengthBar.innerHTML = "";
+        for( let i in barLength){
+            let span = document.createElement("span");
+            span.classList.add("strength");
+            strengthBar.appendChild(span);
+        }
+
+        let spanRef = document.getElementsByClassName("strength");
+        for( let i = 0; i < spanRef.length; i++){
+            switch(spanRef.length - 1){
+                case 0 :
+                    spanRef[i].style.background = "#ff3e36";
+                    break;
+                case 1:
+                    spanRef[i].style.background = "#ff691f";
+                    break;
+                case 2:
+                    spanRef[i].style.background = "#ffda36";
+                    break;
+                case 3:
+                    spanRef[i].style.background = "#0be881";
+                    break;
+            }
+        }
+    }
+
+
+    function toggle(){
+        let password = document.getElementById("password");
+        let eye = document.getElementById("toggle");
+
+        if(password.getAttribute("type") == "password"){
+            password.setAttribute("type","text");
+            eye.style.color = "#062b61";
+        }
+        else{
+            password.setAttribute("type","password");
+            eye.style.color = "#6b6868";
+        }
+    }
+
+</script>

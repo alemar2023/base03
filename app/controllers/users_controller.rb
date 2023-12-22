@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+
+
+
   def index
     @users = User.all
   end
@@ -9,13 +12,7 @@ class UsersController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-  def update_user_language
-    locale = params[:locale].to_s.strip.downcase
-    if locale.present? && I18n.items_available_locales.include?(locale.to_sym)
-      cookies.permanent[:locale] = locale
-      current_user&.update(locale: locale)
-    end
-  end
+
   def show
     @user = User.find_by_id(params[:id])
   end
@@ -26,11 +23,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @bizflag = @user.bizflag
   end
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+       if @user.(user_params)
       redirect_to user_url, notice: "Updated User."
     else
       render :edit
@@ -54,6 +52,15 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :locale, :password, :password_confirmation)
+    params.require(:user).permit(:email, :locale, :password, :password_confirmation, :bizflag, :company, :vat, :sdicode, :firstname, :lastname, :phone)
   end
+
+   def update_user_language
+    locale = params[:locale].to_s.strip.downcase
+    if locale.present? && I18n.items_available_locales.include?(locale.to_sym)
+      cookies.permanent[:locale] = locale
+      current_user&.update(locale: locale)
+    end
+   end
+
 end

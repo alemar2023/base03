@@ -1,15 +1,35 @@
+---
 ja:
-  today: "今日は："
-  now: "今：:"
-  welcome: "いらっしゃいませ!"
-  service_html: "「私たちは<em>善良な人々</em>に豪華なサービスを提供しています。」"
+  account_addresses: 住所
+  account_addresses_text: 配送と配達の設定を入力します
+  account_groups: 私のお気に入りのグループ
+  account_groups_text: お気に入りのセクションでニュースをフォローしてください
+  account_modify_info: ユーザーデータ
+  account_modify_info_text: ユーザーデータを編集する
+  account_orders: 私の注文
+  account_orders_text: 注文状況の追跡および/または確認
+  account_security: アクセスとセキュリティの設定
+  account_security_text: ログイン情報、メールアドレス、携帯電話番号を変更する
+  account_support: お問い合わせ
+  account_support_text: 詳細についてはテクニカル サポートにお問い合わせください
+  account_whishlist: ウィッシュリストと設定
+  account_whishlist_text: ウィッシュリストやお気に入りのアイテムを表示および編集します
+  areas:
+    index:
+      new_area: New area
+    new:
+      back_area: Back area
+      title: Title
   data:
     formats:
       default: "%Y/%m/%d"
       short: "%Y/%m"
-  areas:
-    index:
-      title: "エリア"
-    new:
-      title: "新エリア"
-      back_area: "キャスト"
+  date:
+    formats:
+      default: "%m/%d/%Y"
+      short: "%m/%d"
+  menu_account: 私のアカウント
+  now: '短いデート:'
+  service_html: "「私たちは<em>善良な人々</em>に豪華なサービスを提供しています。」"
+  today: 今日は：
+  welcome: いらっしゃいませ!

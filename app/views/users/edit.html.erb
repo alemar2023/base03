@@ -1,0 +1,265 @@
+
+
+<style>
+
+
+    .container_pwd {
+
+        position: relative;
+        margin: auto;
+    }
+
+    .input_pwd {
+        width: 100%;
+
+        position: relative;
+        background-color: #f6fcff;
+
+        border-radius: 5px;
+    }
+
+    #toggle {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        color: #808080;
+        cursor: pointer;
+    }
+
+    #toggle i {
+        font-size: 16px;
+    }
+
+    .strength {
+        width: 25%;
+        display: inline-block;
+        position: relative;
+        height: 100%;
+        bottom: 5px;
+    }
+
+    #strength-bar {
+        background-color: #dcdcdc;
+        height: 10px;
+        position: relative;
+        margin-top: 15px;
+        border-radius: 10px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+
+</style>
+
+
+    <%= form_for @user do |form| %>
+
+      <h2>Please complete the registration form below</h2>
+      <br>
+
+      <% if @user.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+
+          <ul>
+            <% @user.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+
+      <div class="row">
+
+          <div class="col-md-6">
+
+
+            <div class="field" style="display:flex;height:40px;">
+              <p><b>Business Section</b>
+                <%= form.check_box :bizflag, onchange: "toggleBizSection()", id: 'user_bizflag' %> </p>
+              <p>  <%= @user.bizflag %></p>
+
+              <p>
+                <%= form.label :bizflag do %>
+                  <%= form.check_box :bizflag, id: 'bizFlagCheckbox' %>
+                  Display Biz Section
+                <% end %>
+
+              </p>
+              </p>
+            </div>
+
+
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+
+              </div>
+              <div class="col-xs-8 control-field">
+
+                <div id="biz_section" class="<%= @user.bizflag ? 'show' : 'hide' %>">
+
+
+                <div class="form-group">
+                    <div class="col-sm-3 col-md-2 control-label">
+                      <label for="firstName" class="">Company</label>
+                    </div>
+                    <div class="col-xs-8 control-field">
+                      <%= form.text_field :company, class: "form-control", id: "company_edit_user" %>
+                    </div>
+                    <div class="col-xs-1 col-md-2 control-field"></div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <div class="col-sm-3 col-md-2 control-label">
+                      <label for="firstName" class="">V.A.T.</label>
+                    </div>
+                    <div class="col-xs-8 control-field">
+                      <%= form.text_field :vat, class: "form-control", id: "vat_edit_user" %>
+                    </div>
+                    <div class="col-xs-1 col-md-2 control-field"></div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <div class="col-sm-3 col-md-2 control-label">
+                      <label for="firstName" class="">S.D.I. Code</label>
+                    </div>
+                    <div class="col-xs-8 control-field">
+                      <%= form.text_field :sdicode, class: "form-control", id: "sdi_edit_user" %>
+                    </div>
+                    <div class="col-xs-1 col-md-2 control-field"></div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="col-xs-1 col-md-2 control-field"></div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+                <label for="firstName" class="">First&nbsp;Name</label>
+              </div>
+              <div class="col-xs-8 control-field">
+                <%= form.text_field :firstname, class: "form-control", id: "firstname_edit_user" %>
+              </div>
+              <div class="col-xs-1 col-md-2 control-field"></div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+                <label for="lastName" class="">Last&nbsp;Name</label>
+              </div>
+              <div class="col-xs-8 control-field">
+                <%= form.text_field :lastname, class: "form-control", id: "lastname_edit_user" %>
+              </div>
+              <div class="col-xs-1 col-md-2 control-field"></div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+                <label for="lastName" class="">Main Phone Number</label>
+              </div>
+              <div class="col-xs-8 control-field">
+                <%= form.text_field :phone, class: "form-control", id: "phone_edit_user" %>
+              </div>
+              <div class="col-xs-1 col-md-2 control-field"></div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+                <label for="lastName" class="">Email</label>
+              </div>
+              <div class="col-xs-8 control-field">
+                <%= form.text_field :email, class: "form-control", id: "email_edit_user" %>
+              </div>
+              <div class="col-xs-1 col-md-2 control-field"></div>
+            </div>
+
+
+
+            <div class="form-group">
+              <div class="col-sm-3 col-md-2 control-label">
+
+              </div>
+              <div class="col-xs-8 control-field">
+                <%= form.submit class: "pwd-submit-btn btn btn-primary btn-lg", id: "submit_edit_user" %>
+
+              </div>
+              <div class="col-xs-1 col-md-2 control-field"></div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6 ">
+
+
+            <div class="field" style="display:flex;height:40px;">
+              <p><b>Account Password Section</b>
+                </p>
+              <p>  &nbsp;</p>
+            </div>
+
+
+                <div class="form-group">
+                  <div class="col-sm-3 col-md-2 control-label">
+                    <label for="lastName" class="">New Password</label>
+                  </div>
+                  <div class="col-xs-8 control-field">
+                    <%= form.text_field :password, autocomplete: "new-password", class: "form-control", id: "new_password_edit_user" %>
+                    <% if @minimum_password_length %>
+                      <br/>
+                      <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+                    <% end %>
+                  </div>
+                  <div class="col-xs-1 col-md-2 control-field"></div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-sm-3 col-md-2 control-label">
+                    <label for="lastName" class="">Password Confirmation</label>
+                  </div>
+                  <div class="col-xs-8 control-field">
+                    <%= form.text_field :password_confirmation, autocomplete: "new-password", class: "form-control", id: "password_confirmation_edit_user" %>
+                  </div>
+                  <div class="col-xs-1 col-md-2 control-field"></div>
+                </div>
+
+
+
+            </div>
+
+          </div>
+
+      </div>
+
+    <% end %>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var bizFlagCheckbox = document.getElementById('bizFlagCheckbox');
+        var bizSection = document.getElementById('biz_section');
+
+        // Set initial visibility based on user's bizflag
+        bizSection.style.display = bizFlagCheckbox.checked ? 'block' : 'none';
+
+        // Add event listener to toggle visibility on checkbox change
+        bizFlagCheckbox.addEventListener('change', function() {
+            bizSection.style.display = this.checked ? 'block' : 'none';
+        });
+    });
+</script>
+
+
+
+
+
+

@@ -12,6 +12,23 @@
         text-decoration: none !important;
     }
 
+    .brand-logo {
+
+        height: 48px;
+    }
+    .home-logo {
+
+        height: 180px;
+
+    }
+
+
+    .icons {
+        width: 64px;
+        height: 64px;
+        align-self:center;
+    }
+
     .flags {
         width: 18px;
         height: 18px;
@@ -30,17 +47,38 @@
         border: solid 1px #b0b0b0;
         border-radius:5px;
     }
+
+    /*pagina account*/
+    .ale_center{
+        align-items: center !important;
+        display: flex !important;
+        justify-content: center !important;
+        min-height:160px !important;
+    }
+
+    .account_card{
+        max-width:540px !important;
+    }
+    .account_card:hover{
+        background-color: #eeeeee !important;
+    }
+.hr_zero{
+    margin:2px !important;
+    padding:0 !important
+}
 </style>
 <nav class="navbar navbar-expand-lg bg-body-tertiary" id=xnavbar>
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">LOGO</a>
+    <%= link_to root_path, class: "navbar-item" do %>
+      <%= image_tag "GeKo.svg", class: "brand-logo" %>
+    <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%= link_to "home", root_path, class: "nav-link active" %>
+          <%#= link_to "home", root_path, class: "nav-link active" %>
         </li>
 
         <li class="nav-item dropdown">
@@ -48,21 +86,35 @@
             Dropdown
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to "Area 1", areas_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Market Areas", areas_path, class: "dropdown-item" %></li>
+            <li>
+              <%= link_to(options = { locale: I18n.locale}, class: "nav-bar-item-flag", id: "esp") do %>
+                Market Areas</span>
+            <% end %>
+            </li>
+            <li><%= link_to "Brands", brands_path, class: "dropdown-item" %></li>
+            <li><%#= link_to "Collections", collections_path, class: "dropdown-item" %></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><%#= link_to "Property", properties_path, class: "dropdown-item" %></li>
+            <li><%#= link_to "Category", categories_path, class: "dropdown-item" %></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><%#= link_to "Items", items_path, class: "dropdown-item" %></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
 
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><%= link_to "Brand 2", brands_path, class: "dropdown-item" %></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><%= link_to t('global.menu.home'), brands_path, class: "dropdown-item" %></li>
-            <li><%= link_to t('global.menu.feedback'), brands_path, class: "dropdown-item" %></li>
+
+
 
 
           </ul>
         </li>
+
+
 
 
       </ul>
@@ -73,78 +125,82 @@
 
       <div style="display: block">
 
-        <li class="nav-item dropdown" style="list-style: none;">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown" style="list-style: none;" >
+          <a class="nav-link dropdown-toggle" href="<%= I18n.locale %>" role="button" data-bs-toggle="dropdown" aria-expanded="false"  id="Language">
             <%= image_tag "#{I18n.locale}.svg", class: "flags" %>
           </a>
 
-
-
           <ul class="dropdown-menu" style="background-color: transparent;border:none;width:100px; ">
+            <%  if user_signed_in? %>
+              <li>
+                <%= link_to(options = {locale: :en}, class: "nav-bar-item-flag" , id: "eng") do %>
+                  <%= image_tag "en.svg", class: "flags" %> <span class="flags-text" >eng</span>
+                <% end %>
+              </li>
 
-            <li>
-              <%= link_to(options = {locale: :en}, class: "nav-bar-item-flag") do %>
-                <%= image_tag "en.svg", class: "flags" %> <span class="flags-text">eng</span>
-              <% end %>
-            </li>
+              <li>
+                <%= link_to(options = {locale: :it}, class: "nav-bar-item-flag") do %>
+                  <%= image_tag "it.svg", class: "flags" %>  <span class="flags-text"  id="ita">ita</span>
+                <% end %>
+              </li>
 
-            <li>
-              <%= link_to(options = {locale: :it}, class: "nav-bar-item-flag") do %>
-                <%= image_tag "it.svg", class: "flags" %>  <span class="flags-text">ita</span>
-              <% end %>
-            </li>
+              <li>
+                <%= link_to(options = {locale: :es}, class: "nav-bar-item-flag", id: "esp") do %>
+                  <%= image_tag "es.svg", class: "flags" %>  <span class="flags-text"  >esp</span>
+                <% end %>
+              </li>
 
-            <li>
-              <%= link_to(options = {locale: :es}, class: "nav-bar-item-flag") do %>
-                <%= image_tag "es.svg", class: "flags" %>  <span class="flags-text">esp</span>
-              <% end %>
-            </li>
+              <li>
+                <%= link_to(options = {locale: :ja}, class: "nav-bar-item-flag" , id: "jap")  do %>
+                  <%= image_tag "ja.svg", class: "flags" %>  <span class="flags-text"   >jap</span>
+                <% end %>
+              </li>
 
-            <li>
-              <%= link_to(options = {locale: :ja}, class: "nav-bar-item-flag") do %>
-                <%= image_tag "ja.svg", class: "flags" %>  <span class="flags-text">jap</span>
-              <% end %>
-            </li>
+              <li>
+                <%= link_to(options = {locale: :de}, class: "nav-bar-item-flag" , id: "deu") do %>
+                  <%= image_tag "de.svg", class: "flags" %>  <span class="flags-text"  >deu</span>
+                <% end %>
+              </li>
+            <% else %>
 
-            <li>
-              <%= link_to(options = {locale: :de}, class: "nav-bar-item-flag") do %>
-                <%= image_tag "de.svg", class: "flags" %>  <span class="flags-text">deu</span>
-              <% end %>
-            </li>
+              <li>
+                <%= link_to(options = {locale: :en}, class: "nav-bar-item-flag" , id: "eng") do %>
+                  <%= image_tag "en.svg", class: "flags" %> <span class="flags-text"   >eng</span>
+                <% end %>
+              </li>
 
+              <li>
+                <%= link_to(options = {locale: :it}, class: "nav-bar-item-flag", id: "ita") do %>
+                  <%= image_tag "it.svg", class: "flags" %>  <span class="flags-text"   >ita</span>
+                <% end %>
+              </li>
 
+              <li>
+                <%= link_to(options = {locale: :es}, class: "nav-bar-item-flag", id: "esp") do %>
+                  <%= image_tag "es.svg", class: "flags" %>  <span class="flags-text"   >esp</span>
+                <% end %>
+              </li>
 
+              <li>
+                <%= link_to(options = {locale: :ja}, class: "nav-bar-item-flag", id: "jap") do %>
+                  <%= image_tag "ja.svg", class: "flags" %>  <span class="flags-text"   >jap</span>
+                <% end %>
+              </li>
+
+              <li>
+                <%= link_to(options = {locale: :de}, class: "nav-bar-item-flag", id: "deu") do %>
+                  <%= image_tag "de.svg", class: "flags" %>  <span class="flags-text"   >deu</span>
+                <% end %>
+              </li>
+
+            <% end %>
 
           </ul>
         </li>
       </div>
 
+
       &nbsp; &nbsp;
-
-      <div style="display: none">
-
-        <%= link_to(options = { controller: controller_name, action: action_name, locale: :en }, class: "navbar-item") do %>
-          <%= image_tag "en.svg", class: "flags" %>
-        <% end %>
-
-        <%= link_to(options = { controller: controller_name, action: action_name, locale: :it }, class: "navbar-item") do %>
-          <%= image_tag "it.svg", class: "flags" %>
-        <% end %>
-
-        <%= link_to(options = { controller: controller_name, action: action_name, locale: :es }, class: "navbar-item") do %>
-          <%= image_tag "es.svg", class: "flags" %>
-        <% end %>
-
-        <%= link_to(options = { controller: controller_name, action: action_name, locale: :ja }, class: "navbar-item") do %>
-          <%= image_tag "ja.svg", class: "flags" %>
-        <% end %>
-
-        <%= link_to(options = { controller: controller_name, action: action_name, locale: :de }, class: "navbar-item") do %>
-          <%= image_tag "de.svg", class: "flags" %>
-        <% end %>
-
-
-      </div>
 
       <%= render "/layouts/management" %>
 

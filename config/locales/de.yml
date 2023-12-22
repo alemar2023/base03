@@ -1,15 +1,35 @@
+---
 de:
-  today: "Heute ist:"
-  now: "Kurz:"
-  welcome: "Willkommen!"
-  service_html: "Wir bieten <em>guten Menschen</em> einige ausgefallene Dienstleistungen"
+  account_addresses: Adressen
+  account_addresses_text: Geben Sie Ihre Versand- und Lieferpräferenzen ein
+  account_groups: Meine Lieblingsgruppen
+  account_groups_text: Verfolgen Sie die Neuigkeiten in den Lieblingsbereichen
+  account_modify_info: Benutzerdaten
+  account_modify_info_text: Bearbeiten Sie Ihre Benutzerdaten
+  account_orders: Meine Bestellungen
+  account_orders_text: TVerfolgen und/oder überprüfen Sie den Status von Bestellungen
+  account_security: Zugriffs- und Sicherheitseinstellungen
+  account_security_text: Ändern Sie Ihr Login, Ihre E-Mail-Adresse oder Ihr Mobiltelefon
+  account_support: Kontaktiere uns
+  account_support_text: Für weitere Informationen wenden Sie sich an den technischen Support
+  account_whishlist: Wunschzettel und Präferenzen
+  account_whishlist_text: Sehen und bearbeiten Sie Ihre Wunschlisten und Lieblingsartikel
+  areas:
+    index:
+      new_area: New area
+    new:
+      back_area: Back area
+      title: Title
+  data:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%Y/%m"
   date:
     formats:
       default: "%m/%d/%Y"
       short: "%m/%d"
-  areas:
-    index:
-      title: "Bereich"
-    new:
-      title: "Neues Gebiet"
-      back_area: "Aufführen"
+  menu_account: Mein Konto
+  now: 'Kurzes Date:'
+  service_html: Wir bieten <em>guten Menschen</em> einige ausgefallene Dienstleistungen
+  today: 'Heute ist:'
+  welcome: Willkommen!

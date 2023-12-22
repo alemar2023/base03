@@ -1,0 +1,131 @@
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Google Font -->
+
+  <!--Stylesheet-->
+  <style media="screen">
+
+
+
+      
+      .container_pwd{
+          
+          position: relative;
+          margin: auto;
+      }
+
+      .input_pwd{
+          width: 100%;
+          height: 50px !important;
+          padding: 0 40px 0 20px !important;
+          position: relative;
+          background-color: #edf6f9;
+          border: none;
+          outline: none;
+
+          border-radius: 5px;
+      }
+
+      #toggle{
+          position: absolute;
+          top: 17px;
+          right: 15px;
+          color: #808080;
+          cursor: pointer;
+      }
+      #toggle i{
+          font-size: 20px;
+      }
+      .strength{
+          width: 25%;
+          display: inline-block;
+          position: relative;
+          height: 100%;
+          bottom: 5px;
+      }
+      #strength-bar{
+          background-color: #dcdcdc;
+          height: 10px;
+          position: relative;
+          margin-top: 15px;
+          border-radius: 10px;
+      }
+
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="container_pwd">
+    <input type="password" id="password" oninput="strengthChecker()" class="input_pwd form-control  ">
+    <span id="toggle" onclick="toggle()">
+                <i class="fas fa-eye"></i>
+            </span>
+    <div id="strength-bar"></div>
+  </div>
+</div>
+<!--Script-->
+<script>
+    let parameters = {
+        count : false,
+        letters : false,
+        numbers : false,
+        special : false
+    }
+    let strengthBar = document.getElementById("strength-bar");
+
+    function strengthChecker(){
+        let password = document.getElementById("password").value;
+
+        parameters.letters = (/[A-Za-z]+/.test(password))?true:false;
+        parameters.numbers = (/[0-9]+/.test(password))?true:false;
+        parameters.special = (/[!\"$%&/()=?@~`\\.\';:+=^*_-]+/.test(password))?true:false;
+        parameters.count = (password.length > 7)?true:false;
+
+        let barLength = Object.values(parameters).filter(value=>value);
+
+        console.log(Object.values(parameters), barLength);
+
+        strengthBar.innerHTML = "";
+        for( let i in barLength){
+            let span = document.createElement("span");
+            span.classList.add("strength");
+            strengthBar.appendChild(span);
+        }
+
+        let spanRef = document.getElementsByClassName("strength");
+        for( let i = 0; i < spanRef.length; i++){
+            switch(spanRef.length - 1){
+                case 0 :
+                    spanRef[i].style.background = "#ff3e36";
+                    break;
+                case 1:
+                    spanRef[i].style.background = "#ff691f";
+                    break;
+                case 2:
+                    spanRef[i].style.background = "#ffda36";
+                    break;
+                case 3:
+                    spanRef[i].style.background = "#0be881";
+                    break;
+            }
+        }
+    }
+
+
+    function toggle(){
+        let password = document.getElementById("password");
+        let eye = document.getElementById("toggle");
+
+        if(password.getAttribute("type") == "password"){
+            password.setAttribute("type","text");
+            eye.style.color = "#062b61";
+        }
+        else{
+            password.setAttribute("type","password");
+            eye.style.color = "#6b6868";
+        }
+    }
+
+</script>
+</body>
+</html>

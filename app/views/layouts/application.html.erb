@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Geko Base03</title>
+  <title>base03</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -14,14 +14,10 @@
 <%= render "/layouts/header" %>
 <main class="container">
   <% if notice %>
-    <p  class="notice" style="margin: 0;padding:0;color:green;"><%= notice%>
+    <p id="notice" class="notice" style="margin: 0;padding:0;color:green;"><%= notice%></p>
   <% elsif alert %>
-    <%= alert %></p>
+    <p  id="alert"  style="color: red !important;"><%= alert %></p>
   <% end %>
-
-  <h1><%= @cookie_value %></h1>
-  <h1>xx<%= @cookie_due %></h1>
-  <h2 style="color:red">Session: <%= @session_value %></h2>
   <%= yield %>
 </main>
 </body>

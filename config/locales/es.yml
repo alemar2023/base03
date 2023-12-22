@@ -1,15 +1,35 @@
+---
 es:
-  today: "Hoy es:"
-  now: "Ahora:"
-  welcome: "Bienvenida!"
-  service_html: "Ofrecemos algunos servicios sofisticados a <em>buena gente</em>"
+  account_addresses: Direcciones
+  account_addresses_text: Ingrese sus preferencias de envío y entrega
+  account_groups: Mis grupos favoritos
+  account_groups_text: Sigue las Noticias en las secciones favoritas
+  account_modify_info: Datos del usuario
+  account_modify_info_text: Edita tus datos de usuario
+  account_orders: Mis ordenes
+  account_orders_text: Seguimiento y/o verificación del estado de los pedidos.
+  account_security: Configuración de acceso y seguridad
+  account_security_text: Cambia tu nombre de usuario, correo electrónico o teléfono móvil
+  account_support: Contacta con nosotras
+  account_support_text: Póngase en contacto con el soporte técnico para obtener información.
+  account_whishlist: Listas de deseos y preferencias
+  account_whishlist_text: Ver y editar sus listas de deseos y artículos favoritos
+  areas:
+    index:
+      new_area: New area
+    new:
+      back_area: Back area
+      title: Title
+  data:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%Y/%m"
   date:
     formats:
       default: "%d/%m/%Y"
       short: "%d/%m"
-  areas:
-    index:
-      title: "Área"
-    new:
-      title: "Área nueva"
-      back_area: "Elenco"
+  menu_account: Mi cuenta
+  now: 'Cita corta:'
+  service_html: Ofrecemos algunos servicios sofisticados a <em>buena gente</em>
+  today: 'Hoy es:'
+  welcome: Bienvenida!

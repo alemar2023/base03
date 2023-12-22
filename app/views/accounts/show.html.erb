@@ -2,18 +2,17 @@
     .geko_btn {
 
         border: 0.5px solid #dedede;
-        width: 100% !important;
+        width:100% !important;
     }
 
-    .breadcrumb-item a {
+    .breadcrumb-item a{
         color: navy !important;
-        font-size: 12px !important;
+        font-size:12px !important;
         text-transform: uppercase;
     }
-
-    .breadcrumb-item {
+    .breadcrumb-item{
         color: #9b9b9b !important;
-        font-size: 12px !important;
+        font-size:12px !important;
         text-transform: uppercase;
     }
 
@@ -24,55 +23,44 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb breadcrumb-custom hr_zero">
     <li class="breadcrumb-item"><a href="/" data-abc="true">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page"><span>Account Info</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span>Account & Security</span></li>
   </ol>
 </nav>
-<hr class="hr_zero">
+<hr  class="hr_zero">
 <p>&nbsp;</p>
 <div class="container-fluid">
+
   <div class="row justify-content-md-center">
+
+
+
     <div class="col">
+
     </div>
     <div class="col-md-3">
       <h3>Welcome!</h3>
       <p>
         In this section you can define and modify your access data.<br>
+
       </p>
+<div style="position: fixed;top:450px !important;">
+      <p><b>G.D.P.R.</b></p>
+      <a href="#"><i>read our g.d.p.r. </i></a>
+
+      <p><b>Policy</b></p>
+      <a href="#"><i>read our policy </i></a>
+</div>
+
     </div>
     <div class="col-md-6">
       <ul class="list-group">
-
-        <% if current_user.bizflag %>
-          <li class="list-group-item ">
-            <div class="card-header d-flex justify-content-between align-items-center">
-              <div class="p-3"><b>Company Info:</b><br>
-                <b style="color:#57aaf7">
-                  <%= current_user.company %> </b><br>
-                - VAT:&nbsp;
-                <%= current_user.vat %> <br>
-                - SDI:&nbsp;
-                <%= current_user.sdicode %>
-
-              </div>
-
-            </div>
-          </li>
-
-        <% end %>
-
         <li class="list-group-item ">
           <div class="card-header d-flex justify-content-between align-items-center">
             <div class="p-3"><b>Name:</b><br>
-              <%= if current_user.firstname.present?
-                    (current_user.firstname + " " + current_user.lastname)
-                  else
-                    " -  "
-                  end
-              %></div>
+              <%= current_user.email %></div>
 
           </div>
         </li>
-
         <li class="list-group-item ">
           <div class="card-header d-flex justify-content-between align-items-center">
             <div class="p-3"><b>Email:</b><br>
@@ -82,30 +70,22 @@
         </li>
         <li class="list-group-item ">
           <div class="card-header d-flex justify-content-between align-items-center">
-            <div class="p-3"><b>Main cell phone number:</b><br>
-              <%= if current_user.phone.present?
-                    (current_user.phone)
-                  else
-                    " -  "
-                  end
-              %>
-            </div>
+            <div class="p-3"><b>Password:</b><br>
+              <%= current_user.email %></div>
 
           </div>
         </li>
         <li class="list-group-item ">
           <div class="card-header d-flex justify-content-between align-items-center">
-            <div class="p-3"><b>Password:</b><br>
-              ***********
-            </div>
+            <div class="p-3"><b>Favourite Address:</b><br>
+              <%= current_user.email %></div>
 
           </div>
         </li>
-
         <li class="list-group-item ">
           <div class="card-header d-flex justify-content-center align-items-center">
 
-            <%= link_to "Modify", edit_user_path(@user) , data: { turbolinks: false } ,class: "btn btn-primary shadow-sm p-2 geko_btn "%>
+            <%= link_to "Modify", edit_account_path , class: "btn btn-primary shadow-sm p-2 geko_btn " %>
           </div>
         </li>
 
@@ -117,7 +97,10 @@
     </div>
 
 
+
+
   </div>
+
 
 
 </div>

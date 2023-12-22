@@ -20,6 +20,7 @@ end
 group :development do
   gem "web-console"
   gem 'byebug', '~> 9.0', '>= 9.0.5'
+  gem "letter_opener"
 end
 
 group :test do
@@ -38,3 +39,4 @@ gem "devise", "~> 4.9"
 gem 'devise-i18n'
 
 gem "faker", "~> 3.2"
+gem 'routing-filter'

@@ -5,3 +5,12 @@ import * as bootstrap from "bootstrap"
 
 import "trix"
 import "@rails/actiontext"
+
+
+//= require jquery
+//= require jquery_ujs
+//= require_tree
+
+$(document).on('change', '#biz_section_checkbox', function() {
+    $('form').submit();
+});

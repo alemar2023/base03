@@ -1,17 +1,35 @@
-
+---
 en:
-        today: "Today is:"
-        now: "Now:"
-        welcome: "Welcome!"
-        service_html: "We provide some fancy services to <em> good people</em>"
-        date:
-         formats:
-            default: "%m/%d/%Y"
-            short: "%m/%d"
-        areas:
-          index:
-            title: "Areas"
-          new:
-            title: "New Area"
-            back_area: "List"
-
+  account_addresses: Addresses
+  account_addresses_text: Enter your shipping and delivery preferences
+  account_groups: My Favourite Groups
+  account_groups_text: Follow the News on the favourite sections
+  account_modify_info: User data
+  account_modify_info_text: Edit your user data
+  account_orders: My orders
+  account_orders_text: Track and/or verify the status of orders
+  account_security: Access and Security Settings
+  account_security_text: Change your login, email or mobile phone
+  account_support: Contact us
+  account_support_text: Contact technical support for information
+  account_whishlist: Wishlists and preferences
+  account_whishlist_text: View and edit your wishlists and favorite items
+  areas:
+    index:
+      new_area: New area
+    new:
+      back_area: Back area
+      title: Title
+  data:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%Y/%m"
+  date:
+    formats:
+      default: "%m/%d/%Y"
+      short: "%m/%d"
+  menu_account: My account
+  now: 'Short date:'
+  service_html: We provide some fancy services to <em> good people</em>
+  today: 'Today is:'
+  welcome: Welcome!
